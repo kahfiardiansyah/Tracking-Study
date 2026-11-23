@@ -1,0 +1,6 @@
+{
+  "name": "MochiBelajar — Teman Fokus & Pelacak Belajar",
+  "description": "Aplikasi pelacak waktu belajar, timer Pomodoro dan Deep Work, target mata pelajaran, serta jurnal refleksi dengan desain hangat yang membangkitkan semangat belajar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

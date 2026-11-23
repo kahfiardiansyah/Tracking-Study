@@ -1,0 +1,234 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-display: 'Bricolage Grotesque', system-ui, sans-serif;
+    --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    /* Default Vibe: Strawberry Milk */
+    --vibe-bg: #FFF5F7;
+    --vibe-card: #FFFFFF;
+    --vibe-card-alt: #FFF0F3;
+    --vibe-border: #FBCFE8;
+    --vibe-shadow: rgba(244, 63, 94, 0.14);
+    --vibe-accent: #E11D48;
+    --vibe-accent-hover: #BE123C;
+    --vibe-accent-soft: #FFE4E6;
+    --vibe-accent-text: #BE123C;
+    --vibe-secondary: #F59E0B;
+    --vibe-dot: rgba(244, 63, 94, 0.14);
+  }
+
+  [data-vibe="strawberry"] {
+    --vibe-bg: #FFF5F7;
+    --vibe-card: #FFFFFF;
+    --vibe-card-alt: #FFF0F3;
+    --vibe-border: #FBCFE8;
+    --vibe-shadow: rgba(244, 63, 94, 0.14);
+    --vibe-accent: #E11D48;
+    --vibe-accent-hover: #BE123C;
+    --vibe-accent-soft: #FFE4E6;
+    --vibe-accent-text: #BE123C;
+    --vibe-secondary: #FB7185;
+    --vibe-dot: rgba(244, 63, 94, 0.14);
+  }
+  .dark[data-vibe="strawberry"] {
+    --vibe-bg: #1B1015;
+    --vibe-card: #26161E;
+    --vibe-card-alt: #311C26;
+    --vibe-border: #52293B;
+    --vibe-shadow: rgba(0, 0, 0, 0.45);
+    --vibe-accent: #F43F5E;
+    --vibe-accent-hover: #E11D48;
+    --vibe-accent-soft: rgba(244, 63, 94, 0.2);
+    --vibe-accent-text: #FDA4AF;
+    --vibe-secondary: #FB7185;
+    --vibe-dot: rgba(251, 113, 133, 0.12);
+  }
+
+  [data-vibe="matcha"] {
+    --vibe-bg: #F1FBF5;
+    --vibe-card: #FFFFFF;
+    --vibe-card-alt: #ECFDF5;
+    --vibe-border: #A7F3D0;
+    --vibe-shadow: rgba(16, 185, 129, 0.14);
+    --vibe-accent: #059669;
+    --vibe-accent-hover: #047857;
+    --vibe-accent-soft: #D1FAE5;
+    --vibe-accent-text: #047857;
+    --vibe-secondary: #F59E0B;
+    --vibe-dot: rgba(16, 185, 129, 0.14);
+  }
+  .dark[data-vibe="matcha"] {
+    --vibe-bg: #0D1914;
+    --vibe-card: #14251E;
+    --vibe-card-alt: #1A3027;
+    --vibe-border: #264A3B;
+    --vibe-shadow: rgba(0, 0, 0, 0.45);
+    --vibe-accent: #10B981;
+    --vibe-accent-hover: #059669;
+    --vibe-accent-soft: rgba(16, 185, 129, 0.2);
+    --vibe-accent-text: #6EE7B7;
+    --vibe-secondary: #FBBF24;
+    --vibe-dot: rgba(52, 211, 153, 0.12);
+  }
+
+  [data-vibe="taro"] {
+    --vibe-bg: #F6F3FF;
+    --vibe-card: #FFFFFF;
+    --vibe-card-alt: #F3E8FF;
+    --vibe-border: #DDD6FE;
+    --vibe-shadow: rgba(139, 92, 246, 0.15);
+    --vibe-accent: #7C3AED;
+    --vibe-accent-hover: #6D28D9;
+    --vibe-accent-soft: #EDE9FE;
+    --vibe-accent-text: #6D28D9;
+    --vibe-secondary: #EC4899;
+    --vibe-dot: rgba(139, 92, 246, 0.14);
+  }
+  .dark[data-vibe="taro"] {
+    --vibe-bg: #141022;
+    --vibe-card: #1E1833;
+    --vibe-card-alt: #271F42;
+    --vibe-border: #3B3061;
+    --vibe-shadow: rgba(0, 0, 0, 0.48);
+    --vibe-accent: #8B5CF6;
+    --vibe-accent-hover: #7C3AED;
+    --vibe-accent-soft: rgba(139, 92, 246, 0.22);
+    --vibe-accent-text: #C4B5FD;
+    --vibe-secondary: #F472B6;
+    --vibe-dot: rgba(167, 139, 250, 0.12);
+  }
+
+  [data-vibe="honey"] {
+    --vibe-bg: #FFFBEB;
+    --vibe-card: #FFFFFF;
+    --vibe-card-alt: #FEF3C7;
+    --vibe-border: #FDE68A;
+    --vibe-shadow: rgba(245, 158, 11, 0.16);
+    --vibe-accent: #D97706;
+    --vibe-accent-hover: #B45309;
+    --vibe-accent-soft: #FEF3C7;
+    --vibe-accent-text: #B45309;
+    --vibe-secondary: #0284C7;
+    --vibe-dot: rgba(245, 158, 11, 0.16);
+  }
+  .dark[data-vibe="honey"] {
+    --vibe-bg: #1B150B;
+    --vibe-card: #261E10;
+    --vibe-card-alt: #332815;
+    --vibe-border: #52401E;
+    --vibe-shadow: rgba(0, 0, 0, 0.45);
+    --vibe-accent: #F59E0B;
+    --vibe-accent-hover: #D97706;
+    --vibe-accent-soft: rgba(245, 158, 11, 0.22);
+    --vibe-accent-text: #FCD34D;
+    --vibe-secondary: #38BDF8;
+    --vibe-dot: rgba(251, 191, 36, 0.12);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--vibe-bg);
+    transition: background-color 220ms cubic-bezier(0.16, 1, 0.3, 1), color 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-mono-nums {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Cute tactile stationery card & button styles */
+.vibe-canvas {
+  background-color: var(--vibe-bg);
+  background-image: radial-gradient(var(--vibe-dot) 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+.kawaii-card {
+  background-color: var(--vibe-card);
+  border: 1.5px solid var(--vibe-border);
+  box-shadow: 0 5px 0 var(--vibe-shadow);
+}
+
+.kawaii-card-soft {
+  background-color: var(--vibe-card-alt);
+  border: 1.5px solid var(--vibe-border);
+}
+
+.kawaii-btn-primary {
+  background-color: var(--vibe-accent);
+  color: #FFFFFF;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, 0.18);
+  transition: transform 140ms cubic-bezier(0.16, 1, 0.3, 1), background-color 140ms ease, box-shadow 140ms ease;
+}
+
+.kawaii-btn-primary:hover {
+  background-color: var(--vibe-accent-hover);
+  transform: translateY(-1px);
+}
+
+.kawaii-btn-primary:active {
+  transform: translateY(2px);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.18);
+}
+
+/* Gentle floating animation for cute stickers */
+@keyframes kawaii-float {
+  0%, 100% {
+    transform: translateY(0px) rotate(-2deg);
+  }
+  50% {
+    transform: translateY(-4px) rotate(2deg);
+  }
+}
+
+.animate-kawaii-float {
+  animation: kawaii-float 4.2s ease-in-out infinite;
+}
+
+/* Equalizer bar animation for Lo-Fi player */
+@keyframes eq-bounce {
+  0%, 100% {
+    transform: scaleY(0.35);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.eq-bar-1 {
+  animation: eq-bounce 0.85s ease-in-out infinite;
+  transform-origin: bottom;
+}
+.eq-bar-2 {
+  animation: eq-bounce 0.65s ease-in-out 0.15s infinite;
+  transform-origin: bottom;
+}
+.eq-bar-3 {
+  animation: eq-bounce 0.95s ease-in-out 0.3s infinite;
+  transform-origin: bottom;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
